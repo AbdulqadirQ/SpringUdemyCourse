@@ -8,9 +8,20 @@
 
 	<bean id="person"
 		class="com.abdulqadirsprojects.springCourse.Person" scope="singleton"
-		init-method="onCreate" destroy-method="onDestroy">
+		init-method="onCreate" destroy-method="onDestroy"
+		factory-method="getInstance">
 		<constructor-arg value="777" name="id" type="int"></constructor-arg>
 		<constructor-arg value="Mary" name="name" type="String"></constructor-arg>
+		<property name="taxId" value="123"></property>
+		<property name="address" ref="address"></property>
+	</bean>
+
+	<bean id="person2"
+		class="com.abdulqadirsprojects.springCourse.Person" scope="singleton"
+		init-method="onCreate" destroy-method="onDestroy"
+		factory-method="createPerson" factory-bean="personFactory">
+		<constructor-arg value="654" name="id" type="int"></constructor-arg>
+		<constructor-arg value="Mike" name="name" type="String"></constructor-arg>
 		<property name="taxId" value="123"></property>
 		<property name="address" ref="address"></property>
 	</bean>
@@ -18,5 +29,8 @@
 	<bean id="address" class="com.abdulqadirsprojects.springCourse.Address">
 		<constructor-arg name="street" type="String" value="cambridge crescent"></constructor-arg>
 		<constructor-arg name="postcode" type="String" value="HP13"></constructor-arg>
+	</bean>
+	<bean id="personFactory"
+		class="com.abdulqadirsprojects.springCourse.PersonFactory">
 	</bean>
 </beans>

@@ -10,12 +10,11 @@ public class App {
 
 		ApplicationContext context = new FileSystemXmlApplicationContext("src/main/java/com/abdulqadirsprojects/springCourse/beans/beans.xml");
 		
-		Person person1 = (Person)context.getBean("person");
-		Person person2 = (Person)context.getBean("person");
+		Person person = (Person)context.getBean("person");
 		
-		person1.setTaxId(666);
+		person.setTaxId(666);
 		
-		System.out.println(person2);
+		System.out.println(person);
 		
 		
 		((FileSystemXmlApplicationContext)context).close();
