@@ -5,8 +5,10 @@
 
 
 
-	<bean id="person" class="com.abdulqadirsprojects.springCourse.Person">
+	<bean id="person"
+		class="com.abdulqadirsprojects.springCourse.Person">
 		<constructor-arg value="777" name="id" type="int"></constructor-arg>
 		<constructor-arg value="Mary" name="name" type="String"></constructor-arg>
+		<property name="taxId" value="123"></property>
 	</bean>
 </beans>
