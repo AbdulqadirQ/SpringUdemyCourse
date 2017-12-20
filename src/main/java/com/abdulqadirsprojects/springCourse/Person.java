@@ -12,7 +12,15 @@ public class Person {
 		this.id = id;
 		this.name = name;
 	}
+	
+	public void onCreate() {
+		// this would refer to a String representation of the class (i.e. will call toString method
+		System.out.println("Person created: " + this);
+	}
 
+	public void onDestroy() {
+		System.out.println("Person destroyed");
+	}
 
 	public void speak() {
 		System.out.println("Hello I'm a person");
