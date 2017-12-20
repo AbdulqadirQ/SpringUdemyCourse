@@ -4,12 +4,9 @@ public class Person {
 	
 	private int id;
 	private String name;
-	
 	private int taxId;
-	
-	public Person() {
-		
-	}
+	private Address address;
+
 	
 	public Person(int id, String name) {
 		this.id = id;
@@ -25,10 +22,18 @@ public class Person {
 		this.taxId = taxId;
 	}
 
+	// Address object can now be injected into this Person object
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", name=" + name + ", taxId=" + taxId + "]";
+		return "Person [id=" + id + ", name=" + name + ", taxId=" + taxId + ", address=" + address + "]";
 	}
+
+
 
 
 
