@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-	default-init-method="init" default-destroy-method="destroy">
+	default-init-method="init" default-destroy-method="destroy"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
 
@@ -30,6 +31,11 @@
 		<constructor-arg name="street" type="String" value="cambridge crescent"></constructor-arg>
 		<constructor-arg name="postcode" type="String" value="HP13"></constructor-arg>
 	</bean>
+	
+	<bean id="address2" class="com.abdulqadirsprojects.springCourse.Address" p:street="23 Vinyard Lane"
+	p:postcode="6789">	
+	</bean>
+	
 	<bean id="personFactory"
 		class="com.abdulqadirsprojects.springCourse.PersonFactory">
 	</bean>
